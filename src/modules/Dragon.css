@@ -1,0 +1,52 @@
+/* Ensure image fits container */
+.card-img {
+  width: 100%;
+  height: auto;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 767.98px) {
+  .dragon-item {
+    margin: 1.5rem; /* Adjust as needed */
+  }
+  
+  .card-img {
+    max-height: 200px; /* Adjust as needed */
+    object-fit: cover;
+  }
+
+  .card-body {
+    text-align: center;
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+  }
+
+  .card-text {
+    font-size: 0.875rem;
+  }
+
+  /* Ensure proper spacing and sizing */
+  .btn {
+    width: 100%;
+    margin-top: 0.5rem; /* Adjust as needed */
+  }
+}
+
+/* Responsive adjustments for larger screens */
+@media (min-width: 768px) {
+  .dragon-item {
+    margin: 1rem; /* Adjust as needed */
+  }
+  
+  .card {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .card-body {
+    padding: 1rem 1.5rem;
+
+  }
+}
