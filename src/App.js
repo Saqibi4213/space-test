@@ -6,7 +6,7 @@ import Missions from './components/Missions';
 import MyProfile from './components/MyProfile';
 import Dragons from './components/Dragons';
 import { getDataFromServer } from './redux/Rockets/RocketsSlice';
-import { fetchDragons } from './redux/Dragons/DragonsSlice'; // Correct import for fetchDragons
+import { fetchDragons } from './redux/Dragons/DragonsSlice';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './components/Navbar';
 

@@ -1,31 +1,51 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../modules/Dragon.css'; // Ensure this path is correct
+import {
+  Card, Button, Row, Col,
+} from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../modules/Dragon.css';
 
 function DragonsItem({
   id, name, image, description, reserved, onReserve,
 }) {
   return (
-    <div className="dragon-item card mb-3">
-      <div className="row no-gutters">
-        <div className="col-md-4">
-          <img src={image} alt={name} className="card-img" />
-        </div>
-        <div className="col-md-8">
-          <div className="card-body">
-            <h5 className="card-title">{name}</h5>
-            <p className="card-text">{description}</p>
-            <button
-              type="button"
-              className={`btn ${reserved ? 'btn-danger' : 'btn-primary'}`}
+    <Card className="mb-4 dragon-card">
+      <Row className="g-0">
+        <Col xs={12} md={4} className="text-center">
+          <Card.Img
+            variant="top"
+            src={image}
+            alt={name}
+            className="img-fluid dragon-img"
+          />
+        </Col>
+        <Col xs={12} md={8}>
+          <Card.Body className="d-flex flex-column justify-content-between h-100">
+            <div>
+              <Card.Title className="dragon-name">{name}</Card.Title>
+              <Card.Text className="dragon-desc">
+                <strong>ID:</strong>
+                {id}
+                <br />
+                {reserved && (
+                  <span className="badge bg-danger me-2">Reserved</span>
+                )}
+                <br />
+                {description}
+              </Card.Text>
+            </div>
+            <Button
+              variant={reserved ? 'danger' : 'primary'}
               onClick={() => onReserve(id)}
+              className="reserve-btn mt-3 mt-md-auto"
             >
               {reserved ? 'Cancel Reservation' : 'Reserve Dragon'}
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
+            </Button>
+          </Card.Body>
+        </Col>
+      </Row>
+    </Card>
   );
 }
 
